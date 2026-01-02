@@ -30,6 +30,37 @@ class WeatherApp(QWidget):
 
         self.setLayout(vbox)
 
+        self.city_label.setAlignment(Qt.AlignCenter)
+        self.city_input.setAlignment(Qt.AlignCenter)
+        self.temperature_label.setAlignment(Qt.AlignCenter)
+        self.emoji_label.setAlignment(Qt.AlignCenter)
+        self.description_label.setAlignment(Qt.AlignCenter)
+
+        self.city_label.setObjectName("city_label")
+        self.city_input.setObjectName("city_input")
+        self.temperature_label.setObjectName("temperature_label")
+        self.emoji_label.setObjectName("emoji_label")
+        self.description_label.setObjectName("description_label")
+
+        self.setStyleSheet("""
+                           
+            QLabel, QPushButton {
+                font-style: calibri;
+                
+            }
+            QLabel#city_label {
+                font-style: italic;
+                font-size: 40px;
+            }
+            QLineEdit#city_input {
+                font-size: 40px;
+            }
+            QPushButton#get_weather_button{
+                font-size: 40px;
+                font-weight: bold;
+            }
+        """)
+
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
